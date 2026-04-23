@@ -67,15 +67,16 @@ function flashShake(el) {
   setTimeout(() => el.classList.remove("flash", "shake"), 600);
 }
 
-// ─── Main update loop ─────────────────────────────────────────────────────────
+// ─── Get IST time with deciseconds ────────────────────────────────────────────
 
-function update() {
-  const now    = new Date();
-  const curMin = now.getHours() * 60 + now.getMinutes();
-  const nowSec = now.getHours() * 3600 + now.getMinutes() * 60 + now.getSeconds();
+function getISTTime() {
+  const now = new Date();
+  const istTime = new Date(now.toLocaleString('en-US', { timeZone: 'Asia/Kolkata' }));
+  return istTime;
+}
 
-  // ── Clock ────────────────────────────────────────────────────────────────
-  $("clock").innerText = now.toLocaleString("en-IN", {
+function formatClockWithDeciseconds(istTime) {
+  const options = {
     weekday: "long",
     day:     "numeric",
     month:   "numeric",
@@ -84,7 +85,21 @@ function update() {
     minute:  "2-digit",
     second:  "2-digit",
     hour12:  true,
-  });
+  };
+  const baseTime = new Intl.DateTimeFormat('en-IN', options).format(istTime);
+  const deciseconds = Math.floor((istTime.getMilliseconds() / 100));
+  return `${baseTime}.${deciseconds}`;
+}
+
+// ─── Main update loop ─────────────────────────────────────────────────────────
+
+function update() {
+  const istNow = getISTTime();
+  const curMin = istNow.getHours() * 60 + istNow.getMinutes();
+  const nowSec = istNow.getHours() * 3600 + istNow.getMinutes() * 60 + istNow.getSeconds();
+
+  // ── Clock ────────────────────────────────────────────────────────────────
+  $("clock").innerText = formatClockWithDeciseconds(istNow);
 
   // ── Classify pickups ──────────────────────────────────────────────────────
   const running = [];
@@ -156,7 +171,7 @@ function update() {
 // ─── Bootstrap ────────────────────────────────────────────────────────────────
 
 /**
- * Fetch pickup data from JSON, then start the 1-second update loop.
+ * Fetch pickup data from JSON, then start the update loop.
  * Falls back gracefully if the fetch fails (e.g. running from file://).
  */
 async function init() {
@@ -170,7 +185,7 @@ async function init() {
   }
 
   update();
-  setInterval(update, 1000);
+  setInterval(update, 100);
 }
 
 document.addEventListener("DOMContentLoaded", init);
