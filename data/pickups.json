@@ -13,7 +13,7 @@
   {"name": "BUSSYBEESSDD RD 1",    "start": "05:30 AM", "end": "06:00 AM"},
   {"name": "BLITZ RD 2",           "start": "05:30 AM", "end": "06:00 AM"},
 
-  {"name": "XPRESSBEES RD 1",      "start": "08:00 AM", "end": "08:30 AM"},
+  {"name": "XPRESSBEES RD 1",      "start": "07:30 AM", "end": "08:00 AM"},
 
   {"name": "BLUEDART RD 3",        "start": "10:30 AM", "end": "11:00 AM"},
 
@@ -37,9 +37,11 @@
   {"name": "BLUEDART RD 6",        "start": "06:00 PM", "end": "06:30 PM"},
 
   {"name": "VELOCITY RD 3",        "start": "06:30 PM", "end": "07:00 PM"},
-  {"name": "DTDC RD 2",            "start": "06:30 PM", "end": "07:00 PM"},
-
   {"name": "GP_SUPPLY RD 1",       "start": "08:00 PM", "end": "08:30 PM"},
+   {"name": "SHREERAJEXPRESS RD 1", "start": "08:00 PM", "end": "08:30 PM"},
+   {"name": "DELHIVERYPDS RD 1", "start": "08:00 PM", "end": "08:30 PM"},
+ {"name": "BUSYBEESPPD RD 1", "start": "08:00 PM", "end": "08:30 PM"},
+
 
   {"name": "DELCART RD 3",         "start": "08:30 PM", "end": "09:00 PM"},
   {"name": "DELHIVERY RD 2",       "start": "08:30 PM", "end": "09:00 PM"},
@@ -48,14 +50,17 @@
 
   {"name": "VELOCITY RD 4",        "start": "09:30 PM", "end": "10:00 PM"},
   {"name": "PURPLEDRONE RD 7",     "start": "09:30 PM", "end": "10:00 PM"},
-  {"name": "DTDC RD 3",            "start": "09:30 PM", "end": "10:00 PM"},
-
+  
   {"name": "SHADOWFAX RD 1",       "start": "10:15 PM", "end": "10:30 PM"},
+   {"name": "SHREERAJEXPRESS RD 2", "start": "10:30 PM", "end": "11:00 PM"},
+   {"name": "DELHIVERYPDS RD 2", "start": "10:30 PM", "end": "11:00 PM"},
+ {"name": "BUSYBEESPPD RD 2", "start": "10:30 PM", "end": "11:00 PM"},
 
   {"name": "GP_SUPPLY RD 2",       "start": "11:00 PM", "end": "11:30 PM"},
   {"name": "BLITZNDD RD 1",        "start": "11:00 PM", "end": "11:30 PM"},
   {"name": "FASTBEETLE RD 1",      "start": "11:00 PM", "end": "11:30 PM"},
-  {"name": "SHREERAJEXPRESS RD 1", "start": "11:00 PM", "end": "11:30 PM"},
+  
+ 
 
   {"name": "DELCART RD 4",         "start": "11:30 PM", "end": "12:00 AM"},
   {"name": "PURPLEDRONE RD 1",     "start": "11:30 PM", "end": "12:00 AM"},
